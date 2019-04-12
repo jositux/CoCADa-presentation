@@ -1,0 +1,35 @@
+Esfera con agujeros:
+
+function radiusFromDiameter (d) {
+  return d / 2;
+}
+
+function rotcy (rot, r, h) {
+  return rotate(rot, cylinder({r: r, h: h, center: true}));
+}
+
+function example001 (params) {
+  var size = params.size;
+  var hole = params.hole;
+  var radius = radiusFromDiameter(hole);
+  var height = radiusFromDiameter(size * 2.5);
+
+  return difference(
+    sphere({r: radiusFromDiameter(size)}),
+    rotcy([0, 0, 0], radius, height),
+    rotcy([90, 0, 0], radius, height),
+    rotcy([0, 90, 0], radius, height)
+  );
+}
+
+function main (params) {
+  return example001(params);
+}
+
+function getParameterDefinitions () {
+  return [
+    { name: 'size', caption: 'Number of teeth:', type: 'int', initial: 30, min: 5, max: 100, step: 1 },
+    { name: 'hole', caption: 'hole:', type: 'int', initial: 10, min: 5, max: 50, step: 1 }
+
+  ];
+}

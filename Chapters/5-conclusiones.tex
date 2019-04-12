@@ -1,0 +1,30 @@
+%-----------------------------------------------------
+% Chapter 5: Conclusiones
+%-----------------------------------------------------
+\chapter{Conclusiones}
+\label{chap: cap5}
+
+Según lo investigado, la tendencia actual en el desarrollo de productos es la colaboración (co-diseño) entre personas con diferentes competencias y dispersas geográficamente. Por esto, surgió la necesidad de desarrollar una solución distribuida en la que los participantes puedan colaborar independientemente de su profesión.\vskip
+Las herramientas CAD analizadas, en algunos casos no soportan la colaboración o son aplicaciones orientados a un perfil específico de profesionales (ingenieros, arquitectos, diseñadores industriales, etc).\vskip
+El uso de \textit{Lean UX} como metodología orientada a la experiencia de usuario (UX) permitió una comprensión de las necesidades reales.
+La utilización de la misma durante el desarrollo ha sido satisfactoria, debido a que las iteraciones o experimentos con  prototipos de alta fidelidad (PMV) han permitido evaluar las soluciones de forma objetiva y obtener \textit{feedback} de inmediato.
+\vskip
+Los usuarios con experiencia en CAD (diseñadores) necesitan crear modelos 3D en un entorno que permita automatizar partes del diseño, de manera que se pueda registrar su evolución. 
+En el capítulo \ref{chap: cap2} para tener una mejor comprensión de las herramientas necesarias para dicho entorno, se exploraron algunas aplicaciones de diseño paramétrico especificado en algoritmos, incluido OpenJSCAD. Además, deben poder comunicarse de forma eficiente con otros usuarios (no expertos). \vskip
+Por otro lado, los usuarios no expertos necesitan de un marco de trabajo para expresar sus ideas y experimentar de forma intuitiva  con  modelos 3D. %; a través de la manipulación directa, comentarios, anotaciones y  obtención de archivos (STL) preparados para la fabricación digital.
+En este sentido, en el capítulo \ref{chap:cap3} se analizaron algunas aplicaciones de referencia que %que
+%implementan estas funcionalidades. %
+permiten explorar modelos 3D, realizar comentarios, anotaciones, exportar archivos, etc. 
+\vskip
+Para que CoCADa sea un sistema de CAD distribuido se han implementado características de \textbf{WPDM} (gestión de los datos del producto basados en la web), brindando acceso a usuarios dispersos geográficamente, independientemente de las plataformas de software que utilicen. El registro de la evolución de los diseños se ha logrado mediante la incorporación de los conceptos \textbf{diseño paramétrico} (\textit{scripting}) y \textbf{FBDE} (intercambio de datos basado en características). Se implementan en el WPDM como versiones del producto, también llamado ``árbol de historias''. A su vez, en cada versión (marco de trabajo compartido) se permite la colaboración entre los usuarios (\textbf{co-diseño}) mediante las herramientas para manipular los diseños, comentar, adjuntar archivos y realizar anotaciones sobre los modelos.\vskip
+
+El uso de herramientas \textbf{FLOSS} ha sido fundamental para adaptar el código fuente de otras aplicaciones a las necesidades del proyecto.
+Las tecnologías (Node.js, Nuxt.js, LoopBack, Vue.js, Vuetify) permiten emplear el mismo lenguaje de programación Javascript en toda %s las partes de 
+la aplicación (\textit{Backend} y \textit{Frontend}), evitando la complejidad de mantener código de diferentes lenguajes.\vskip
+
+Finalmente, la interfaz gráfica UI ha sido diseñada para una experiencia de usuario UX satisfactoria, facilitando así el auto-aprendizaje de los usuarios sin necesitad de un entrenamiento previo. En base a los experimentos, se llega a la conclusión que la aplicación puede ser utilizada en ambientes de gran complejidad técnica como el modelado mecánico y también para uso recreativo, por ejemplo en el diseño de piezas simples para impresión 3D.
+
+Como trabajo futuro resulta interesante implementar comentarios y características propias de redes sociales como \textbf{@nombre} para hacer referencia al usuario destinatario del mensaje, notificaciones, mensajes de audio, etc.\vskip
+
+Así también durante las pruebas, los usuarios sugirieron la posibilidad de visualizar los modelos considerando otros factores (texturas, iluminación, transparencias, etc).
+Sería posible extender los modelos sólidos a otras representaciones mediante librerías como Three.js\footnote{\url{https://threejs.org/}} y así obtener otros resultados  en la visualización de productos.\vskip
