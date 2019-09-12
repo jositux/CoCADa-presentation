@@ -1,37 +1,38 @@
 %-----------------------------------------------------
 % Chapter 1: Introducción
 %-----------------------------------------------------
+\cleardoublepage
 \chapter{Introducción}
 \label{chap:cap1}
-Los sistemas de \textbf{diseño asistido por computadora} en inglés \textit{Computer-aided design} (CAD) tienen una amplia trayectoria y han demostrado ser excelentes herramientas para el diseño de productos \citep{Chao2001},  como característica distintiva incorporan el paradigma de Diseño Paramétrico \citep{Davis2013} que posibilita la modificación del diseño de manera sencilla y rápida mediante el ajuste de sus parámetros; sin necesidad de modelar todo nuevamente.
-En la industria de la manufactura estos sistemas son indispensables, ya que combinados con la \textbf{Fabricación Asistida por Computadora} en inglés \textit{Computer-Aided Manufacturing}  (CAM) y el \textbf{Control Numérico Computarizado} (CNC), permiten que la fabricación digital \citep{Chryssolouris2009} se pueda aplicar a prácticamente cualquier producto. La innovación en este contexto es la vinculación directa entre el modelo CAD y su fabricación CAM. 
+Los sistemas de \textbf{diseño asistido por computadora} en inglés \textit{Computer Aided Design} (\Gls{CAD}) tienen una amplia trayectoria y han demostrado ser excelentes herramientas para el diseño de productos \citep{Chao2001}, como característica distintiva incorporan el paradigma de Diseño Paramétrico \citep{Davis2013} que posibilita la modificación del diseño de manera sencilla y rápida mediante el ajuste de sus parámetros; sin necesidad de modelar todo nuevamente.
+En la industria de la manufactura estos sistemas son indispensables, ya que combinados con la \textbf{Fabricación Asistida por Computadora} en inglés \textit{Computer Aided Manufacturing}  (\Gls{CAM}) y el \textbf{Control Numérico Computarizado} (\Gls{CNC}), permiten que la fabricación digital \citep{Chryssolouris2009} se pueda aplicar a prácticamente cualquier producto. La innovación en este contexto es la vinculación directa entre el modelo CAD y su fabricación CAM. 
 
 En Argentina, tal es la interés en este campo, que desde el año 2013, el ministerio de ciencia, tecnología e innovación productiva ha impulsado diversas acciones para la difusión, capacitación y apoyo a proyectos de innovación, desarrollo y adopción de estas tecnologías. Sobre todo en el área de la impresión 3D \citep{BERMAN2012155}, al ser una de las más difundidas y promisorias \citep{MinisteriodeCiencia2015}.
 
 
-La masificación de la fabricación digital hace necesario el \textbf{desarrollo colaborativo de productos} en inglés \textit{Collaborative Product Development} (CPD) \citep{Elfving2007} entre grupos de expertos con diferentes competencias y muchas veces geográficamente dispersos. Este enfoque, también conocido como \textbf{co-diseño} \citep{PerezGarcia2014} requiere de una comunicación efectiva en entornos distribuidos\footnote{Entorno en el que los sistemas informáticos en red colaboran aportando sus recursos.}; dado que los problemas en los procesos de diseño suelen ser ocasionados por errores en la interpretación de ideas entre los participantes.
+La masificación de la fabricación digital hace necesario el \textbf{desarrollo colaborativo de productos} en inglés \textit{Collaborative Product Development} (\gls{CPD}) \citep{Elfving2007} entre grupos de expertos con diferentes competencias y muchas veces geográficamente dispersos. Este enfoque, también conocido como \textbf{co-diseño} \citep{PerezGarcia2014} requiere de una comunicación efectiva en entornos distribuidos\footnote{Entorno en el que los sistemas informáticos en red colaboran aportando sus recursos.}; dado que los problemas en los procesos de diseño suelen ser ocasionados por errores en la interpretación de ideas entre los participantes.
 
 %Por otra parte, \textquote{\textit{la mayoría de los sistemas CAD/CAM han sido diseñados para trabajar en entornos aislados, no permitiendo comunicación alguna con otros sistemas}}\citep{Chao2001}. 
 
 Por otra parte, la mayoría de los sistemas CAD/CAM son aplicaciones de escritorio  %para trabajar en entornos aislados, %no permitiendo comunicación alguna con otros sistemas 
 %Este hecho se debe a la naturaleza propia de la aplicaciones 
 que necesitan ser instaladas obligatoriamente en cada computadora por separado. Las aplicaciones web son menos propensas a este %problema 
-hecho ya que el usuario accede a ellas sin necesidad de instalar el software en su dispositivo. El uso del CAD en la web se ha incrementado en los últimos años gracias a la estandarización de tecnologías como HTML5\footnote{\url{https://www.w3.org/TR/html52/}} y WebGL \citep{Nyman2013} que permiten experiencias de usuario en inglés \textit{User Experiencie} (UX) \citep{hartson2012ux} similares a las de las aplicaciones de escritorio. \textquote{\textit{Uno de los avances más recientes en este campo es la capacidad de las aplicaciones web para representar gráficos en 3D.}} \citep{Waerner2012}. \vskip
+hecho ya que el usuario accede a ellas sin necesidad de instalar el software en su dispositivo. El uso del CAD en la web se ha incrementado en los últimos años gracias a la estandarización de tecnologías como \Gls{HTML5}\footnote{\url{https://www.w3.org/TR/html52/}} y \Gls{WebGL} \citep{Nyman2013} que permiten experiencias de usuario en inglés \textit{User Experience} (\Gls{UX}) \citep{hartson2012ux} similares a las de las aplicaciones de escritorio. \textquote{\textit{Uno de los avances más recientes en este campo es la capacidad de las aplicaciones web para representar gráficos en 3D.}} \citep{Waerner2012}. \vskip
 
 
-Recientemente han aparecido servicios que proporcionan funcionalidades de CAD y administración de proyectos de diseño en la nube \citep{mell2011nist}. Un ejemplo es OnShape\footnote{\url{https://www.onshape.com/}} que permite a los equipos colaborar mediante modelos compartidos desde la web. Sin embargo, esta plataforma está orientada a especialistas en el diseño de piezas mecánicas, siendo ideal para los ambientes de ingeniería y diseño industrial pero difícil de utilizar por personas sin formación en el área de modelado, en consecuencia, dificulta el co-diseño en términos de diversidad de competencias.\vskip
+Recientemente han aparecido servicios que proporcionan funcionalidades de CAD y administración de proyectos de diseño en la nube \citep{mell2011nist}. Un ejemplo es \Gls{OnShape}\footnote{\url{https://www.onshape.com/}} que permite a los equipos colaborar mediante modelos compartidos desde la web. Sin embargo, esta plataforma está orientada a especialistas en el diseño de piezas mecánicas, siendo ideal para los ambientes de ingeniería y diseño industrial pero difícil de utilizar por personas sin formación en el área de modelado, en consecuencia, dificulta el co-diseño en términos de diversidad de competencias.\vskip
 Esta situación provoca que los participantes opten por utilizar servicios colaborativos genéricos para comunicarse, como la mensajería instantánea, las redes sociales o videoconferencias mediante Skype\footnote{\url{https://www.skype.com/}} y compartan sus archivos utilizando Dropbox\footnote{\url{https://www.dropbox.com/}} o sistemas similares. La multiplicidad de medios produce sesgo en la comprensión de los proyectos a nivel general.
-\textquote{\textit{Para un equipo es preferible contar con la colaboración integrada en una misma aplicación web}} \citep{Alfaiate2017}. Otras limitaciones de estos servicios son la falta de mecanismos para registrar el progreso o cambios de los diseños en todo momento y la imposibilidad de señalar o ``marcar'' los problemas detectados de forma precisa, de manera que se pueda informar sobre estos a los demás colaboradores.\vskip\vspace{5mm}
+\textquote{\textit{Para un equipo es preferible contar con la colaboración integrada en una misma aplicación web}} \citep{Alfaiate2017}. Otras limitaciones de estos servicios son la falta de mecanismos para registrar el progreso o cambios de los diseños en todo momento y la imposibilidad de señalar o ``marcar'' los problemas detectados de forma precisa, de manera que se pueda informar sobre estos al resto del equipo.\vskip
 
 
-\clearpage
-Ante los problemas planteados, una \textbf {aplicación web colaborativa y distribuida para el diseño de productos orientados a la fabricación digital} proporcionaría herramientas para facilitar el co-diseño entre participantes con diferentes competencias y mejorar la administración en términos del progreso o evolución de los diseños. La aplicación o prototipo de software lleva el nombre de \textbf{Aplicación de CAD Colaborativa} en inglés \textit{Collaborative CAD Application} (CoCADA). \vskip
+%\clearpage
+Ante los problemas planteados, una \textbf {aplicación web colaborativa y distribuida para el diseño de productos orientados a la fabricación digital} proporcionaría herramientas para facilitar el co-diseño entre participantes con diferentes competencias y mejorar la administración en términos del progreso o evolución de los diseños. La aplicación o prototipo de software lleva el nombre de \textbf{Aplicación de CAD Colaborativa} en inglés \textit{Collaborative CAD Application} (CoCADa). \vskip
 
 
-\vspace{5mm}
+\vspace{0mm}
 
 Este documento se encuentra organizado de las siguiente manera: 
-En el \textbf{Capítulo 2} se explican las características de los sistemas CAD y los conceptos fundamentales de los  modelos orientados a la fabricación digital. Luego se analizan las ventajas del uso de \textit{LeanUX}\citep{Gothelf2013} para desarrollar un software colaborativo y distribuido (\textbf{Capítulo 3}), se enuncia el problema y los detalles de la solución (CoCADA) explicando los componentes constitutivos y las principales funcionalidades implementadas (\textbf{Capítulo 4}). Finalmente, en el \textbf{Capítulo 5}, se realizan la conclusiones y se formulan directivas para trabajos futuros.
+En el \textbf{Capítulo 2} se explican las características de los sistemas CAD y los conceptos fundamentales de los  modelos orientados a la fabricación digital. Luego se analizan las ventajas del uso de \textit{\Gls{Lean UX}} \citep{Gothelf2013} para desarrollar un software colaborativo y distribuido (\textbf{Capítulo 3}), se enuncia el problema y los detalles de la solución (CoCADa) explicando los componentes constitutivos y las principales funcionalidades implementadas (\textbf{Capítulo 4}). Finalmente, en el \textbf{Capítulo 5}, se realizan la conclusiones y se formulan directivas para trabajos futuros.
 
 
 
@@ -41,7 +42,7 @@ En el \textbf{Capítulo 2} se explican las características de los sistemas CAD 
 
 
 
-\clearpage
+%\clearpage
 
 \section{Objetivos}
 
@@ -52,7 +53,7 @@ Desarrollar un prototipo de sistema que facilite la colaboración en el proceso 
 
 \subsection {Objetivos Específicos}
 \begin{itemize}
-  \item Recabar bibliografía sobre sistemas CAD paramétricos, modelos 3D en la web, modelos orientados a la fabricación digital, sistemas colaborativos y distribuidos, metodología Lean UX. 
+  \item Recabar bibliografía sobre sistemas CAD paramétricos, modelos 3D en la web, modelos orientados a la fabricación digital, sistemas colaborativos y distribuidos, metodología \textit{Lean UX}. 
   
   \item Analizar y describir soluciones de CAD existentes, sobre todo aquellas que se ofrecen como servicios en la nube.
   
@@ -60,11 +61,11 @@ Desarrollar un prototipo de sistema que facilite la colaboración en el proceso 
   
   \item Investigar los requerimientos del sistema y los componentes de software a utilizar en el desarrollo.
   
-  \item Diseñar la interfaz gráfica de usuario en inglés \textit{Graphical User Interface} (GUI) de la aplicación utilizando el enfoque Lean UX.
+  \item Diseñar la interfaz gráfica de usuario en inglés \textit{Graphical User Interface} (\Gls{GUI}) de la aplicación utilizando el enfoque \textit{Lean UX}.
   
   \item Diseñar un modelo de dominio de una capa de servicios.
   
-  \item Desarrollar el prototipo de software con herramientas FLOSS \citep{stallman2007software}\citep{Stallman} según los requerimientos de la GUI y el Modelo de dominio.
+  \item Desarrollar el prototipo de software con herramientas \Gls{FLOSS} \citep{stallman2007software}\citep{Stallman} según los requerimientos de la GUI y el Modelo de dominio.
   
   \item Realizar pruebas para experimentar en diferentes escenarios y evaluar los resultados.
 \end{itemize}

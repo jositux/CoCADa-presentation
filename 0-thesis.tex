@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{report}
+\documentclass[a4paper,11pt, twoside]{report}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Universidad Gastón Dachary
@@ -17,7 +17,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % LINE SPACING
-\newcommand{\linespacing}{1.35}
+\newcommand{\linespacing}{1.3}
 \renewcommand{\baselinestretch}{\linespacing}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -30,7 +30,7 @@
 %\usepackage{dirtytalk} % Permite el uso de say
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
-\usepackage{csquotes}  % Permite el uso de \begin{displayquote}
+%\usepackage{csquotes}  % Permite el uso de \begin{displayquote}
 \usepackage{amsmath}
 \addtolength{\footnotesep}{4mm}
 
@@ -75,14 +75,27 @@
 
 
 %Import the natbib package and sets a bibliography  and citation styles
-\usepackage{natbib}
+%\usepackage{natbib}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{unsrtnat}
+%\bibliographystyle{ieeetr}
+\usepackage[sort&compress,numbers]{natbib}
+
+%\bibliographystyle{plain}
+    
 % BIBLIOGRAPHY STYLE
-\bibliographystyle{abbrvnat}
-%\bibliographystyle{plain} for [1], [2] etc.
+%\bibliographystyle{abbrvnat} % El que usamos en cocada al principio.
+%\bibliographystyle{IEEEannot}
+%\bibliographystyle{ieeetr}
+%\bibliographystyle{unsrtnat}
+%\setcitestyle{square}
+%\bibliographystyle{plain}% for [1], [2] etc.
 %\bibliographystyle{apalike}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setcitestyle{authoryear,open={(},close={)}} %Citation-related commands
+% Original cocada
+%\setcitestyle{authoryear,open={(},close={)}} %Citation-related commands
 
 
 \renewcommand{\theequation}{Ec.\arabic{equation}} % Agrega "Ec." en la numeración de las ecuaciones.
@@ -123,6 +136,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{longtable}
+\usepackage[tablename=Tabla]{caption}
+
+%\usepackage{glossaries}
+\usepackage{glossaries}
+
+% Listado de Términos.
+\input{Referencias/terms.tex}
+
+\makeglossaries
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % BEGIN DOCUMENT
@@ -149,6 +171,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % RESUMEN
 %\input{resumen.tex}
@@ -171,11 +194,13 @@
 %    - Conclusiones y trabajo futuro.
 
 \input{titulo-agradecimiento.tex}
-\clearpage
+\cleardoublepage
+\input{abstract.tex}
+\cleardoublepage
 %\pdfbookmark[0]{Contents}{contents_bookmark}
 \tableofcontents
-\clearpage
-\input{abstract.tex}
+%\clearpage
+\input{Referencias/glosary.tex}
 \input{Chapters/1-intro}
 \input{Chapters/2-sistemas-cad}
 \input{Chapters/3-colaborativo-leanux}
@@ -188,6 +213,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Referencias
 \input{Referencias/referencias}
+\input{Referencias/figures.tex}
+\input{Referencias/tables.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

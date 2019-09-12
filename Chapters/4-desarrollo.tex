@@ -1,12 +1,12 @@
-
+\cleardoublepage
 %-----------------------------------------------------
 % Chapter 4: Descripción del prototipo
 %-----------------------------------------------------
-\chapter{Resultados: CoCADa Un software para el diseño colaborativo con LeanUX}
+\chapter{Resultados: CoCADa Un software para el diseño colaborativo con Lean UX}
 \label{cap:desarrollo}
 \label{chap: cap3}
 
-En este capítulo se implementa el proceso de \textit{Lean UX} en el desarrollo de CoCADa. El mismo se divide en cinco secciones, las cuatro primeras (\ref{vision-marco}, \ref{dis-des-colabo}, \ref{pmv-cocada} y \ref{feedback}) corresponden al uso de la metodología la cual describe las declaraciones, el diseño colaborativo, el desarrollo de los PMVs y experimentos y el \textit{feedback} con los usuarios. La última sección (\ref{sistema-cocada}) se enfoca exclusivamente a los aspectos técnicos del sistema tales como la arquitectura de software y las tecnologías involucradas.
+En este capítulo se implementa el proceso de \textit{Lean UX} en el desarrollo de CoCADa. El mismo se divide en cinco secciones, las cuatro primeras (\ref{vision-marco}, \ref{dis-des-colabo}, \ref{pmv-cocada} y \ref{feedback}) corresponden al uso de la metodología la cual describe las declaraciones, el diseño colaborativo, el desarrollo de los PMVs y experimentos y el \textit{feedback} con los usuarios. La última sección (\ref{sistema-cocada}) se enfoca exclusivamente en los aspectos técnicos del sistema tales como la arquitectura de software y las tecnologías involucradas.
 
 
 \vspace{5mm}
@@ -14,16 +14,14 @@ En este capítulo se implementa el proceso de \textit{Lean UX} en el desarrollo 
 \label{vision-marco}
 \textbf{Declaración del problema para CoCADa}:\vskip
 \textquote{Los proyectos de diseños de productos son desarrollados por equipos de trabajo generalmente conformados por personas con diferentes competencias (profesiones o grados de conocimiento). Los participantes requieren comunicar sus ideas, proponer cambios y comprender la evolución de los productos, para ello es fundamental una comunicación eficiente. 
-Se ha observado que las herramientas de comunicación más utilizadas en la actualidad (email, redes sociales, etc.) \textbf{dificultan la organización de los mensajes y la gestión de información sobre los proyectos}.
-Esto genera problemas de interpretación de las características de los productos y dificulta el control sobre el trabajo realizado. En consecuencia, los participantes manifiestan una experiencia negativa durante el proceso, reduciendo su participación.
-
-¿Cómo se podría mejorar la comunicación de modo que los que usuarios aumenten la colaboración de una manera ordenada y precisa?}
+En el proceso de investigación o \textit{research} los participantes han manifestado que las herramientas de comunicación más utilizadas (email, redes sociales, etc.) \textbf{dificultan la organización de los mensajes y la gestión de información sobre los proyectos}, esto causa problemas de interpretación sobre las características de los productos y dificulta el control en el trabajo realizado. Dicha situación genera una reducción en la participación durante el desarrollo del proyecto. ¿Cómo se podría mejorar la comunicación de modo que los usuarios aumenten la colaboración de una manera ordenada y precisa?}
 
 %\textquote{[El servicio/producto] debe cumplir con [estos objetivos]. Sin embargo, se ha observado que no se están alcanzando [estos objetivos], lo que está causando [este efecto adverso] para los usuarios. ¿Cómo se podría mejorar el  [servicio/producto] de modo que los usuarios consigan mejorar sus resultado según [estos criterios cuantificables o cualificables]?}\vskip
 
-\vskip
-%Evidentemente, esta declaración está repletas de suposiciones, para extraerlas se utiliza la siguiente lista u \textbf{hoja de suposiciones}.
-Las \textbf{suposiciones} del problema son entonces las siguientes:
+\vspace{5mm}
+
+La declaración del problema contiene muchas \textbf{suposiciones} o aspectos que el equipo de desarrollo considera ciertos respecto a la solución o producto. Para extraerlas se responden las siguientes preguntas y se registran en la lista u \textbf{hoja de suposiciones}. 
+%Las \textbf{suposiciones} del problema son entonces las siguientes:
 
 
 \begin{enumerate}
@@ -64,22 +62,25 @@ Poseen las capacidades técnicas y la experiencia sobre procesos y metodologías
     \end{enumerate}
 \end{enumerate}
 
-\subsection{Hipótesis}
-Desarrollando una herramienta de comunicación para proyectos de diseño de productos, se logrará una mayor colaboración en los equipos de trabajo. % que conforman los equipos de trabajo. 
-Se sabrá si el desarrollo es correcto cuando aumente la participación entre las personas con diferentes competencias y se generen las condiciones necesarias para el co-diseño.
+\subsection{Hipótesis de la solución}
+Una vez identificado el problema y extraídas las suposiciones, se declara una hipótesis general como punto de partida para el desarrollo de la solución.
+
+\textquote{Desarrollando una herramienta de comunicación para proyectos de diseño de productos, se logrará una mayor colaboración en los equipos de trabajo. % que conforman los equipos de trabajo. 
+Se sabrá si el desarrollo es correcto cuando aumente la participación entre las personas con diferentes competencias y se generen las condiciones necesarias para el co-diseño.}
 
 \subsection{Personas}
 \label{personas}
-En la figura \ref{fig:persona1} se analizan dos arquetipos que representan los dos tipos de usuarios del sistema. El usuario sin conocimientos de CAD (\textbf{Persona A}). El usuario profesional (\textbf{Persona B}).
+En la figura \ref{fig:persona1} se analizan dos arquetipos que representan los dos tipos de usuarios del sistema. El usuario sin conocimientos de CAD (\textbf{Persona A}) (izquierda) y el usuario profesional (\textbf{Persona B}) (derecha).\vskip
+En la parte superior se especifica la información general del usuario. El cuadrante inferior izquierdo contiene las necesidades y  frustraciones respecto la solución actual, los puntos de conflicto específicos que el producto intenta resolver y/o la oportunidad que se trata de capturar con él. El cuadrante inferior derecho contiene las soluciones potenciales, sugeridas por el usuario.
 
 \begin{figure}[ht]
 \includegraphics[width=16cm]{Img/Desarrollo/persona1.png}
 \centering
-\caption{\footnotesize{Personas utilizadas en CoCADa. El usuario sin conocimientos de CAD (Persona A)(izquierda). Usuario profesional (Persona B)(derecha). En la parte superior se especifica la información general del usuario. El cuadrante inferior izquierdo debe contiene las necesidades y  frustraciones respecto la solución actual, los puntos de conflicto específicos que el producto intenta resolver y/o la oportunidad que se trata de capturar con él. El cuadrante inferior derecho contiene las soluciones potenciales, sugeridas por el usuario.}}
+\caption{\footnotesize{Personas utilizadas en CoCADa.}}
 \label{fig:persona1}
 \end{figure}
 
-\clearpage
+%\clearpage
 \subsection{Funciones o funcionalidades}
 \label{section:subhipo}
 Con todo el material obtenido se organizan a continuación las sub-hipótesis que deben probarse. 
@@ -115,70 +116,99 @@ Poder comunicar aspectos de diseño entre personas de diferentes disciplinas  \\
 8 & Un mecanismo para inicio de sesión con usuario y contraseña & Para (Persona A) y (Persona B) & El ingreso privado  \\
 \hline
 
+\caption{\footnotesize{Tabla de sub-hipótesis para CoCADa}}
+
 \end{longtable}
 
-\begin{center}
- \caption{\footnotesize{Tabla de sub-hipótesis para CoCADa}}
-\end{center}
 
-\clearpage
+%\clearpage
 \section{Diseño Colaborativo}
 \label{dis-des-colabo}
+
+En la figura \ref{salida} se puede apreciar un resultado del estudio de diseño explicado en la sección \ref{dis-colabo}. Los bosquejos o \textit{sketches} reflejan los aspectos más relevantes de la aplicación según las funcionalidades analizadas, los posibles escenarios de uso y las interfaces de usuario necesarias para que CoCADa sea funcional.
  
 \begin{figure}[ht]
 \includegraphics[width=7cm]{Img/UX/edc.jpg}
 \centering
-\caption{\footnotesize{Resultado del estudio de diseño explicado en la sección \ref{dis-colabo}. Sketchs o bocetos de interfaces de usuario para CoCADa.}}
+\caption{\footnotesize{Bosquejos para CoCADa.}}
 \label{salida}
 \end{figure}
+
+Otro resultado es la guía de estilos (ver sección \ref{dis-colabo}) con el diseño orientado en los usuarios objetivo. Se puede apreciar en la figura \ref{vuetify} un ejemplo de componente web para conversaciones y su forma de implementación  mediante código \Gls{HTML}, CSS y \Gls{JavaScript}.
+
+ 
 
 \begin{figure}[ht]
 \includegraphics[width=8cm]{Img/Desarrollo/vuety.jpg}
 \centering
-\caption{\footnotesize{Guía de estilo utilizada en CoCADa. Ejemplo de componente web para conversaciones y su forma de uso mediante código HTML, CSS y javascript.}}
+\caption{\footnotesize{Guía de estilos para CoCADa. }}
 \label{vuetify}
 \end{figure}
 
 
-\clearpage
+%\clearpage
 \section{PMV y experimentos}
 \label{pmv-cocada}
 
+Se utilizaron computadoras con conexión a internet y un navegador web mostrando un modelo por defecto en la pantalla. Los usuarios no recibieron instrucciones sobre el uso y no tuvieron limitaciones de tiempo. El evaluador se limitó a observar y registrar la actividad.
+Se presentaron de \textbf{prototipos de alta fidelidad} \citep{Gamble2016} %\textquote{\textit{La fidelidad se refiere al nivel de realismo en un prototipo}} . 
+con el objetivo de lograr un aspecto y comportamiento similar al de la interfaz definitiva.
+
+\subsection{Demo \#1}
 El primer PMV o \textbf{Demo \#1} evaluó la \textbf{sub-hipótesis 1} de la tabla de sub-hipótesis: ``\textbf{Un visor de modelos 3D en la web para el usuario (Persona A) y (Persona B) para solucionar de forma eficiente la visualización de los productos}''.\vskip
-Se utilizaron tres preguntas para orientar el experimento: 
+Se utilizaron tres preguntas para orientar los experimentos: 
 \begin{enumerate}
     \item \textbf{¿Quién interactuará efectivamente con el prototipo?} \\
     El usuario sin conocimientos de CAD (Persona A).
     \item \textbf{¿Qué se espera aprender de él?} \\
-    Aspectos de funcionalidad y usabilidad de la interfaz UI al  momento de interactuar con un modelo 3D.
+    Aspectos de funcionalidad y usabilidad de la UI al  momento de interactuar con un modelo 3D.
     \item \textbf{¿Cuánto tiempo se tiene para desarrollar el prototipo?}\\ Aproximadamente 4 días.
 \end{enumerate}
 
-Se utilizaron \textbf{prototipos de alta fidelidad} \citep{Gamble2016} %\textquote{\textit{La fidelidad se refiere al nivel de realismo en un prototipo}} . 
-para lograr un aspecto y comportamiento similar al de la interfaz definitiva.
-
-En el primer experimento se presentó un prototipo de visor con un modelo 3D (ver figura \ref{fig:feedback0})  %y funcionalidades de zoom (alejar, acercar), rotación y traslación. También se presentan los parámetros para modificar la geometría y el color 
-, programado en base 
-al código de OpenJSCAD en un tiempo aproximado de 36 horas.
+Se presentó un prototipo de visor con un modelo 3D (ver figura \ref{fig:feedback0}) con funcionalidades de zoom (alejar, acercar), rotación y traslación. También se establecieron parámetros de geometría y color (izquierda). Fué programado en base al código de OpenJSCAD en un tiempo aproximado de 36 horas.
 
 \begin{figure}[ht]
     \includegraphics[width=14cm]{Img/Desarrollo/feedback0.jpg}
     \centering
-    \caption{\footnotesize{Pantalla  de Demo \#1. Visor con un modelo 3D (centro) y funcionalidades de zoom (alejar, acercar), rotación y traslación. Parámetros para modificar la geometría y el color (izquierda).}}
+    \caption{\footnotesize{Demo \#1. Visor con un modelo 3D y Parámetros (izquierda).}}
      \label{fig:feedback0}
 \end{figure}
 
 
-\subsubsection{Características del experimento:} 
-Se utilizó una computadora con conexión a internet y un navegador web mostrando el modelo por defecto en la pantalla. El usuario no recibió instrucciones sobre el uso y no tiene limitaciones de tiempo. El evaluador se limitó a observar y registrar la actividad.
+
+
+
+\subsection{Demo \#2}
+Se evaluó la \textbf{sub-hipótesis 5} de la tabla de sub-hipótesis: ``\textbf{Un mecanismo para escribir código de modelado para (Persona B) para incorporar diseños y modificarlos mediante scripting}''.\vskip
+Se utilizaron las tres preguntas: 
+\begin{enumerate}
+    \item \textbf{¿Quién interactuará efectivamente con el prototipo?} \\
+    El usuario profesional (Persona B).
+    \item \textbf{¿Qué se espera aprender de él?} \\
+    Aspectos de funcionalidad y usabilidad de la UI y el editor de código en el momento de manipular modelos mediante \textit{scripting}. No se evalúa el conocimiento sobre el lenguaje de programación ni las habilidades del usuario.
+    \item \textbf{¿Cuánto tiempo se tiene para desarrollar el prototipo?}\\ Aproximadamente 4 días.
+\end{enumerate}
+
+Se presentó un prototipo de visor con un modelo 3D, parámetros y un editor de código (ver figura \ref{fig:feedback00}). Fué programado en un tiempo aproximado de 36 horas.
+
+\begin{figure}[ht]
+    \includegraphics[width=14cm]{Img/Desarrollo/feedback00.jpg}
+    \centering
+    \caption{\footnotesize{Demo \#2. Modelo 3D y parámetros (izquierda). Editor de código (derecha).}}
+     \label{fig:feedback00}
+\end{figure}
+
+%\clearpage
 
 \section{Feedback}
 \label{feedback}
 
 Al final de la sesión de prueba se realizaron una serie de preguntas sobre la experiencia de usuario, divididas en tópicos. \\ 
 Las respuestas posibles fueron: \textbf{Buena, Regular o Mala}. En caso de responder Regular o Mala se realizaron otras 2 preguntas: \textbf{¿Cuál es el inconveniente?} y \textbf{¿Qué sugiere para resolver ese inconveniente?}\\ 
-En la siguiente tabla se detallan los tópicos y sus respuestas:
+En la siguientes tablas se detallan los tópicos y sus respuestas:
 
+
+\subsection{Feedback con Demo \#1}
 \begin{longtable}{ |p{0.8cm}|p{2.3cm}|p{2.2cm}|p{3.6cm}|p{3.6cm}| }
 \hline
      Ítem & Tópico & Experiencia  & Inconveniente & Cómo mejorar\\
@@ -195,33 +225,53 @@ En la siguiente tabla se detallan los tópicos y sus respuestas:
 \hline
 4 & Modificación de parámetros & Regular & Es incómodo ingresar números utilizando el teclado & Agregar un elemento parecido a los que tienen las apps.\\
 \hline
+\caption{\footnotesize{Resultados del \textit{feedback} para Demo \#1}}
 \end{longtable}
-\begin{center}
-    \caption{\footnotesize{Resultados del feedback para Demo \#1}}
-\end{center}
+
+
+\subsection{Feedback con Demo \#2}
+
+\begin{longtable}{ |p{0.8cm}|p{2.3cm}|p{2.2cm}|p{3.6cm}|p{3.6cm}| }
+\hline
+     Ítem & Tópico & Experiencia  & Inconveniente & Cómo mejorar\\
+\hline
+1 & Visualización del Modelo & Buena & - & -\\
+\hline
+2 & Edición de código & Buena & - & - \\
+\hline
+3 & Relación del código con el modelo & Regular & Es difícil darse cuenta si el código del editor es correspondiente al modelo actual & Agregar un mecanismo de alerta cuando aún no se han reflejado los cambios.\\
+\hline
+
+\caption{\footnotesize{Resultados del \textit{feedback} para Demo \#2}}
+
+\end{longtable}
 
 \subsection{Resultados y propuestas}
-Luego de replicar y analizar las \textbf{experiencias de usuario negativas},  se construyó un prototipo \textbf{Demo \#2} en base al feedback y las recomendaciones del usuario en el experimento con Demo \#1.
+
+\subsubsection{Resultados para Demo \#1}
+
 
 \begin{itemize}
 
-    \item \textbf{Zoom} (alejar, acercar). En la figura \ref{fig:feedback1} se puede apreciar como se ``rompe" la geometría. 
-    %No se dispone de un mecanismo para la corrección.\vskip 
-    \textbf{Solución}: Se agrega un botón de ``Resetear Vista'' (izquierda) para establecer la cámara en la posición original, con el objeto centrado en la pantalla (ver figura \ref{fig:feedback4} , izquierda).
+    \item \textbf{Zoom} (alejar, acercar). En la figura \ref{fig:feedback1} se puede apreciar como se ``rompe" la geometría al acercarse demasiado al objeto. 
+    %No se dispone de un mecanismo para la corrección.\vskip
+    \\
+    \textbf{Solución}: Agregar un botón de ``Resetear Vista'' (izquierda) para establecer la cámara en su posición original, con el objeto centrado en la pantalla (ver figura \ref{fig:feedback4} , izquierda).
     
     \begin{figure}[h]
     \includegraphics[width=14cm]{Img/Desarrollo/feedback2.jpg}
     \centering
-    \caption{\footnotesize{Inconvenientes  con el zoom en Demo \#1. Se ``rompe'' la geometría.}}
+    \caption{\footnotesize{Inconvenientes  con el zoom en Demo \#1.}}
      \label{fig:feedback1}
     \end{figure}
     
-    \item \textbf{Traslación} (Mover). En la Figura \ref{fig:feedback2} el modelo prácticamente desaparece de la pantalla. %No existe un mecanismo para salir de esta situación. \vskip
-    \textbf{Solución}: Se utiliza la misma funcionalidad de el punto anterior.
+    \item \textbf{Traslación} (Mover). En la Figura \ref{fig:feedback2} el modelo prácticamente desaparece de la pantalla. %No existe un mecanismo para salir de esta situación. 
+    \vskip
+    \textbf{Solución}: Utilizar la misma funcionalidad de el punto anterior.
     
-    \item \textbf{Modificación de parámetros}. La mayoría de las personas están acostumbrados a las interfaces con componente gráficos como deslizadores en los que no es necesario escribir  valores numéricos. Tanto en la figura \ref{fig:feedback1} como en la figura \ref{fig:feedback2}(izquierda) no se visualizan este tipo de elementos.\vskip 
+    \item \textbf{Modificación de parámetros}. El uso de campos de textos no es adecuado para valores numéricos. La mayoría de las personas están acostumbrados a las interfaces con componente gráficos como controles deslizantes en los que no es necesario escribir números con el teclado, sino que permiten a los usuarios realizar selecciones a partir de un rango de valores definidos. Tanto en la figura \ref{fig:feedback1} (izquierda) como en la figura \ref{fig:feedback2} (izquierda) no se utilizan este tipo de elementos.\vskip 
     
-    \textbf{Solución}: Se agrega un componente \textit{slider} como parámetro ``Texto profundidad" (ver figura \ref{fig:feedback4} , izquierda) para evitar la carga de valores numéricos por teclado. El resto de los campos de texto no se han modificado, intencionalmente, para que el usuario pueda evaluar las diferencias en el uso.
+    \textbf{Solución}: Incorporar controles deslizantes o \textit{\gls{slider}} para los parámetros numéricos y así evitar la carga de valores por teclado. 
 
 \end{itemize}
 
@@ -229,49 +279,89 @@ Luego de replicar y analizar las \textbf{experiencias de usuario negativas},  se
    \begin{figure}[h]
     \includegraphics[width=14cm]{Img/Desarrollo/feedback3.jpg}
     \centering
-    \caption{\footnotesize{Inconvenientes con la traslación en Demo \#1. El objeto se sitúa fuera del campo de visión. También se observan problemas con la modificación de parámetros (izquierda), el uso de campos de textos no es adecuado para valores numéricos.}}
+    \caption{\footnotesize{Inconvenientes con la traslación en Demo \#1. }}
      \label{fig:feedback2}
     \end{figure}
+
+
+
+
+\subsubsection{Propuestas para Demo \#1}
+Luego de replicar y analizar las \textbf{experiencias de usuario negativas},  se construyó un prototipo \textbf{Demo \#1.1} en base al feedback y las recomendaciones del usuario Persona A en el experimento con Demo \#1. Se agregó un botón ``Resetear vista'' (ver figura \ref{fig:feedback4}) para solucionar el problema del zoom. Se cambió el campo de texto del parámetro ``Texto profundidad'' por un  \textit{slider} para mejorar la experiencia de usuario al modificar los valores numéricos. El resto de los campos de texto no han sido modificados de forma intencional, para que el usuario pueda comparar las diferencias respecto al nuevo.
 
 
 \begin{figure}[ht]
     \includegraphics[width=14cm]{Img/Desarrollo/feedback4.jpg}
     \centering
-    \caption{\footnotesize{Demo \#2. Corrección de inconvenientes hallados en Demo \#1. Se agrega un botón ``Resetear vista'' para solucionar el problema del zoom. Se agrega el componente ``slider'' como parámetro ``Texto profundidad'' para mejorar la experiencia de usuario al modificar los valores numéricos. }}
+    \caption{\footnotesize{Demo \#1.1. Corrección de inconvenientes hallados en Demo \#1.  }}
     \label{fig:feedback4}
 \end{figure}
 
-Al finalizar cada experimento se vuelve al ciclo \textit{construir-medir-aprender} visto en la sección \ref{section:pmv}, hasta obtener un prototipo que satisfaga al usuario. De esa manera se obtuvieron recomendaciones interesantes para ser implementadas en el futuro: en el experimento con Demo \#2, el usuario sugirió utilizar la funcionalidad de \textit{reset}\footnote{Reiniciar, en inglés \textit{reset} se conoce como la puesta en condiciones iniciales de un sistema.} pero en los parámetros y de forma individual, un requerimiento de la vista general adaptado a los componentes.\\
-Con la tabla de sub-hipótesis y lo aprendido con el usuario en los experimentos, finalmente se estableció la arquitectura de software necesaria para dar soporte a todas las funcionalidades de CoCADa.
 
-\clearpage
+\subsubsection{Resultados para Demo \#2}
+
+\begin{itemize}
+
+    \item \textbf{Relación del código con el modelo}. En la figura \ref{fig:feedback001} se puede apreciar la  \textbf{experiencia de usuario negativa}, al modificar el código existen diferencias entre el programa y el modelo, no existe un mecanismo que brinde información al  usuario sobre esta situación para decidir si ver los cambios en el modelo o bien seguir editando el código.
+    
+    \vskip 
+    
+    \textbf{Solución}: Agregar un mensaje de alerta para indicar cuándo el usuario ha modificado el código y el cambio aún no se ha reflejado en el modelo.
+    
+\end{itemize}
+
+
+ \begin{figure}[h]
+    \includegraphics[width=14cm]{Img/Desarrollo/feedback002.png}
+    \centering
+    \caption{\footnotesize{Inconvenientes en la relación del código con el modelo en Demo \#2.}}
+     \label{fig:feedback001}
+    \end{figure}
+
+\subsubsection{Propuestas para Demo \#2}
+
+Se construyó un prototipo \textbf{Demo \#2.1} en base a las recomendaciones del usuario Persona B en el experimento con Demo \#2 (ver figura \ref{fig:feedback002}). Se agregó un componente con el mensaje de alerta para informar al usuario si los cambios en el código aún no se reflejaron en el modelo.
+
+\begin{figure}[h!]
+    \includegraphics[width=14cm]{Img/Desarrollo/feedback003.png}
+    \centering
+    \caption{\footnotesize{Demo \#2.1. Corrección del inconveniente hallado en Demo \#2.}}
+     \label{fig:feedback002}
+    \end{figure}
+
+\vspace{5mm}
+
+Al finalizar cada experimento se vuelve al ciclo \textit{construir-medir-aprender} visto en la sección \ref{section:pmv}, hasta obtener un prototipo que satisfaga al usuario. De esa manera se obtuvieron recomendaciones interesantes para ser implementadas en el futuro. %: en el experimento con Demo \#1.1, el usuario sugirió utilizar la funcionalidad de \textit{reset}\footnote{Reiniciar, en inglés \textit{reset} se conoce como la puesta en condiciones iniciales de un sistema.} pero en los parámetros y de forma individual, un requerimiento de la vista general adaptado a los componentes.\\
+Con la tabla de sub-hipótesis y lo aprendido con los usuarios en los experimentos, finalmente se estableció la arquitectura de software necesaria para dar soporte a todas las funcionalidades de CoCADa.
+
+%\clearpage
 \section{Sistema CoCADa}
 \label{sistema-cocada}
 
-En la sección \ref{section:subhipo} se identificaron las  funcionalidades que la aplicación debe proveer a los usuarios. Adicionalmente, para una colaboración distribuida, se requiere de la \textbf{Gestión de datos de productos basado en la web} (WPDM), explicada en la sección \ref{sec:pdm}. CoCADa se divide en dos áreas fundamentales: \textit{Back-End} y \textit{Front-End} \citep{mardan2015full}.
+En la sección \ref{section:subhipo} se identificaron las  funcionalidades que la aplicación debe proveer a los usuarios. Adicionalmente, para una colaboración distribuida, se requiere de la \textbf{Gestión de datos de productos basado en la web} (WPDM), explicada en la sección \ref{sec:pdm}. CoCADa se divide en dos áreas fundamentales: \textit{\Gls{Back-End}} y \textit{\Gls{Front-End}} \citep{mardan2015full}.
 
 
 
     
 \subsection{Back-End}
-La aplicación de \textit{Back-End} o capa de servicios cuenta con tecnologías para tareas que no pueden ser resueltas directamente por los usuarios como la persistencia de datos y el almacenamiento de archivos. Las tecnologías utilizadas son:
+La aplicación de \textit{Back-End} o capa de servicios (ver figura  \ref {fig:sistema0}) cuenta con tecnologías para tareas que no pueden ser resueltas directamente por los usuarios como la persistencia de datos y el almacenamiento de archivos. Las tecnologías utilizadas son:
 
 \begin{itemize}
 
-    \item \textbf{Node.js}\footnote{\url{https://nodejs.org/es/}} como web server y entorno de ejecución para JavaScript en el lado del servidor, de la misma manera que lo hacen otros lenguajes como PHP\footnote{\url{http://php.net/manual/es/intro-whatis.php}} o Python. 
+    \item \textbf{\Gls{Node.js}}\footnote{\url{https://nodejs.org/es/}} como web server y entorno de ejecución para JavaScript en el lado del servidor, de la misma manera que lo hacen otros lenguajes como \Gls{PHP}\footnote{\url{http://php.net/manual/es/intro-whatis.php}} o Python. 
     
-    \item \textbf{Nuxt.js}\footnote{\url{https://nuxtjs.org/}}. Es un framework para crear aplicaciones isomórficas o universales con Vue.js\footnote{\url{https://vuejs.org/}}. Una aplicación  universal  es  aquella  que su código puede ser ejecutado tanto en el cliente (navegador web) como en el servidor. Nuxt.js incorpora el concepto \textit{Server Side Rendering}  (SSR)\footnote{\url{https://ssr.vuejs.org/#what-is-server-side-rendering-ssr}}.
+    \item \textbf{\Gls{Nuxt.js}}\footnote{\url{https://nuxtjs.org/}}. Es un \gls{Framework} para crear aplicaciones isomórficas o universales con \Gls{Vue.js}\footnote{\url{https://vuejs.org/}}. Una aplicación  universal  es  aquella  que su código puede ser ejecutado tanto en el cliente (navegador web) como en el servidor. Nuxt.js incorpora el concepto \textit{Server Side Rendering}  (\Gls{SSR})\footnote{\url{https://ssr.vuejs.org/#what-is-server-side-rendering-ssr}}.
     El SSR en CoCADa brinda la posibilidad de convertir los  componentes web en cadenas de HTML en el servidor, luego son enviadas al navegador web y se genera la aplicación en el lado del cliente. 
     
-    \item \textbf{LoopBack}\footnote{\url{https://loopback.io}}. Es un conjunto de módulos de Node.js que permiten la implementación de APIs \citep{masse2011rest} altamente flexibles. Está basado en el framework \textbf{Express.js}\footnote{\url{https://expressjs.com/es/}} y proporciona funcionalidades para:
+    \item \textbf{\Gls{LoopBack}}\footnote{\url{https://loopback.io}}. Es un conjunto de módulos de Node.js que permiten la implementación de APIs \citep{masse2011rest} altamente flexibles. Está basado en el framework \textbf{\Gls{Express.js}}\footnote{\url{https://expressjs.com/es/}} y proporciona funcionalidades para:
     
-    - Crear APIs REST dinámicas end-to-end\footnote{End-to-end es un enfoque que involucra la visión global del encadenamiento de procesos y/o actividades, desde que surge una necesidad a satisfacer, hasta que esta es satisfecha} con poca codificación.\\
-    - Acceso a datos para los principales motores de bases de datos, servicios SOAP y otras APIs. \\
-    - Almacenamiento de archivos o \textit{file storage}.\\
-    - Inicio de sesión mediante protocolos de autorización OAuth\footnote{\url{https://oauth.net/2/}}.\\
-    Nuxt.js se comunica con LoopBack a través de su API REST , obteniendo como respuesta es un documento JSON.
+    - Crear APIs \Gls{REST} dinámicas end-to-end\footnote{End-to-end es un enfoque que involucra la visión global del encadenamiento de procesos y/o actividades, desde que surge una necesidad a satisfacer, hasta que esta es satisfecha.} con poca codificación.\\
+    - Acceso a datos para los principales motores de bases de datos, servicios \Gls{SOAP} y otras APIs. \\
+    - Almacenamiento de archivos o \textit{\Gls{file storage}}.\\
+    - Inicio de sesión mediante protocolos de autorización \Gls{OAuth}\footnote{\url{https://oauth.net/2/}}.\\
+    Nuxt.js se comunica con LoopBack a través de su API REST, obteniendo como respuesta es un documento \Gls{JSON}.
     
-    \item \textbf{MongoDB}\footnote{\url{https://www.mongodb.com/es}}. El enfoque de CoCADa es agnóstico\footnote{Se refiere a la capacidad de interoperabilidad y compatibilidad de un componente de cómputo entre diversos sistemas y ambientes, sin requerir una adaptación especial. } respecto al motor de base de datos, sin embargo, se utiliza MongoDB (NoSQL) para la persistencia de datos. A diferencia de las bases de datos relacionales, los datos se almacenan en tablas, sino mediante documentos en formato JSON. Esto permite que la integración entre MongoDB y javascript sea mucho más directa.
+    \item \textbf{\Gls{MongoDB}}\footnote{\url{https://www.mongodb.com/es}}. El enfoque de CoCADa es agnóstico\footnote{Se refiere a la capacidad de interoperabilidad y compatibilidad de un componente de cómputo entre diversos sistemas y ambientes, sin requerir una adaptación especial. } respecto al motor de base de datos, sin embargo, se utiliza MongoDB (\Gls{NoSQL}) para la persistencia de datos. A diferencia de las bases de datos relacionales, los datos se almacenan en tablas, sino mediante documentos en formato JSON. Esto permite que la integración entre MongoDB y JavaScript sea mucho más directa.
 
 \vskip
 \end{itemize}
@@ -279,7 +369,7 @@ La aplicación de \textit{Back-End} o capa de servicios cuenta con tecnologías 
 \begin{figure}[h]
     \includegraphics[width=8cm]{Img/Desarrollo/backendf.png}
     \centering
-    \caption{\footnotesize{Backend de CoCADa. Node.js se utiliza como web server y entorno de ejecución para JavaScript. Nuxt.js provee el Server Side Rendering (SSR). Loopback implementa la API REST y gestiona los archivos (File Storage). MongoDB es el motor de bases de datos. Nuxt.js se comunica con LoopBack a través de su API, obteniendo como respuesta un documento JSON.}}
+    \caption{\footnotesize{Backend de CoCADa.}}
      \label{fig:sistema0}
 \end{figure}
 
@@ -291,18 +381,19 @@ En esta sección se desarrolla el modelo lógico del sistema, incluyendo el sopo
 \begin{figure}[h]
     \includegraphics[width=10cm]{Img/Desarrollo/cocada-de0.png}
     \centering
-    \caption{Modelo de datos para CoCADa. Un Proyecto puede contener versiones de un producto (árbol de historias). Una Versión puede ser utilizada por uno o más usuarios en el marco de trabajo, también soporta conversaciones de estos usuarios a través de Comentarios. Un Usuario puede asumir un rol específico. Un Comentario puede contener uno o más archivos. }
+    \caption{\footnotesize{Modelo de datos para CoCADa.}  }
     \label{fig:schema}
 \end{figure}
 
 \begin{itemize}
-    \item \textbf{Proyecto}: Es la entidad que gestiona la  evolución de los diseños. Puede contener una o más versiones de un producto, también llamado árbol de historias (ver figura \ref{fig:schema}). 
+    \item \textbf{Proyecto}: Es la entidad que gestiona la  evolución de los diseños. Puede contener una o más versiones de un producto, también llamado árbol de historias. 
     
-    En la figura \ref{fig:schema2} se puede analizar un  proyecto con su respectivas versiones y la evolución de los diseños.
+    En la figura \ref{fig:schema2} se puede analizar un  proyecto con su respectivas versiones y la evolución de los diseños ordenadas  por fecha ascendente. La imagen que identifica el Proyecto 1 es la misma que la última versión del producto. La Versión 1 se inicia al momento de generar el proyecto, con un modelo de ejemplo (cubo). La  Versión 2 se genera a partir de la anterior, con los cambios efectuados en el código y así sucesivamente.
+    
     \begin{figure}[h]
     \includegraphics[width=16cm]{Img/Desarrollo/cocada-de.png}
     \centering
-    \caption{\footnotesize{Un proyecto con su árbol de historia o versiones. Se puede apreciar la evolución del producto ordenada por fecha ascendente. La imagen que identifica el $Proyecto \ 1$ es la misma que la última versión del producto. La $Versión \ 1$ se inicia al momento de generar el proyecto, con un modelo de ejemplo (cubo). La $Versión \ 2$ se genera a partir de la anterior, con los cambios efectuados en el código y así sucesivamente.}}
+    \caption{\footnotesize{Un proyecto con sus versiones o "árbol de historia". }}
     \label{fig:schema2}
     \end{figure}
     
@@ -312,7 +403,7 @@ En esta sección se desarrolla el modelo lógico del sistema, incluyendo el sopo
     \item \textbf{Usuario}. La entidad representa a los usuarios del sistema. 
     
     \item \textbf{Comentario}. 
-    Es la entidad que gestiona los comentarios asociados a una Versión.
+    Gestiona los comentarios asociados a una Versión.
     
     \item \textbf{Rol}. Especifica los permisos de los usuarios dentro del sistema, un mismo rol puede ser asignado a diferentes usuarios.
     
@@ -320,36 +411,38 @@ En esta sección se desarrolla el modelo lógico del sistema, incluyendo el sopo
     
 \end{itemize}
 
-Para facilitar el desarrollo, LoopBack provee una herramienta (\textit{API Explorer}\footnote{\url{https://loopback.io/doc/en/lb3/Use-API-Explorer.html}}) para explorar las entidades, los metodos HTTP disponibles y los \textit{EndPoints}\footnote{Un Endpoint en la API de CoCADa es una URL única que representa un objeto o una colección de objetos.} de la API. En la figura \ref{fig:explorer} se puede ver un modelo ``Versión'' utilizado como prueba.
+Para facilitar el desarrollo, LoopBack provee una herramienta (\textit{\Gls{API Explorer}}\footnote{\url{https://loopback.io/doc/en/lb3/Use-API-Explorer.html}}) para explorar las entidades, los métodos \Gls{HTTP} disponibles y los \textit{\Gls{EndPoints}}\footnote{Un Endpoint en la API de CoCADa es una URL única que representa un objeto o una colección de objetos.} de la API. En la figura \ref{fig:explorer} se puede ver el ejemplo de un modelo ``Versión'' con los datos del producto.
 
 \begin{figure}[ht]
-    \includegraphics[width=16cm]{Img/Desarrollo/strong.jpg}
+    \includegraphics[width=14cm]{Img/Desarrollo/strong.jpg}
     \centering
-    \caption{\footnotesize{Herramienta API Explorer de LoopBack. Se muestra el contenido de un modelo ``Versión'', se pueden apreciar los datos del producto.}}
+    \caption{\footnotesize{Herramienta API Explorer de LoopBack.}}
     \label{fig:explorer}
 \end{figure}
 
-\clearpage
+%\clearpage
 \subsection{Front-End}
 \label{front}
-En las aplicaciones web, el \textit{Front-End} o capa de presentación implica el uso de las tecnologías con las que interactúa directamente el usuario. Normalmente estas tecnologías son desarrolladas en los lenguajes HTML, CSS, javacript y otros recursos como imágenes y gráficos vectoriales (ver figura \ref{fig:front}). Al ingresar al sistema, se muestra la interfaz de usuario UI también llamada CoCADa APP.
+En las aplicaciones web, el \textit{Front-End} o capa de presentación implica el uso de las tecnologías con las que interactúa directamente el usuario. Normalmente estas tecnologías son desarrolladas en los lenguajes HTML, CSS, javacript y otros recursos como imágenes y gráficos vectoriales (ver figura \ref{fig:front}). Al ingresar al sistema, se muestra la interfaz de usuario UI también llamada CoCADa \Gls{APP}.
 
 \begin{figure}[h]
     \includegraphics[width=10cm]{Img/Desarrollo/front.png}
     \centering
-    \caption{\footnotesize{Frontend de CoCADa. CoCADa APP está compuesta por OpenJSCAD (Lenguaje de descripción) y Vue.js como sistema reactivo + Vuetify (Material Design). WebGL resuelve la representación interna (matemática) en el navegador web.}}
+    \caption{\footnotesize{Front-End de CoCADa. 
+    %CoCADa APP está compuesta por OpenJSCAD (Lenguaje de descripción) y Vue.js como sistema reactivo + Vuetify (Material Design). WebGL resuelve la representación interna (matemática) en el navegador web.
+    }}
     \label{fig:front}
 \end{figure}
 
 Para la implementación se utilizan las siguientes tecnologías:
 \begin{itemize}
 
-     \item \textbf{OpenJSCAD} (javascript) como \textbf{lenguaje de descripción CSG} para trabajar en alto nivel y de forma intuitiva con las primitivas, transformaciones, operaciones booleanas, etc. Además provee mecanismos para la manipulación visual de parámetros y exportación de los modelos en formato STL. Una vez procesadas las sentencias del lenguaje de descripción, se traducen a su  \textbf{representación interna} (matemática) vista en la sección \ref{repGeo} mediante la API \textbf{WebGL} del navegador web (ver figura \ref{fig:front}).
+     \item \textbf{OpenJSCAD} (JavaScript) como \textbf{lenguaje de descripción CSG} para trabajar en alto nivel y de forma intuitiva con las primitivas, transformaciones, operaciones booleanas, etc. Además provee mecanismos para la manipulación visual de parámetros y exportación de los modelos en formato STL. Una vez procesadas las sentencias del lenguaje de descripción, se traducen a su  \textbf{representación interna} (matemática) vista en la sección \ref{repGeo} mediante la API \textbf{WebGL} del navegador web (ver figura \ref{fig:front}).
      
     \item \textbf{Vue.js}\footnote{\url{https://vuejs.org/}}. Es un framework progresivo para interfaces de usuario, lo que significa que se pueden incorporar herramientas incrementalmente, a medida que aumenta la complejidad de la aplicación. Un ventaja de usar esta tecnología es su característica de sistema \textbf{reactivo} \citep{mezzalira2018front}, manteniendo una interacción constante con su entorno y permitiendo el cambio de estado interno por medio de eventos. 
     Cuando los datos de la interfaz son modificados por alguna acción del sistema o del usuario, por ejemplo: cada vez que se hace una petición al \textit{Back-End} (ver figura \ref{fig:front-backend}), tiene la capacidad de modificar solamente los componentes necesarios, sin necesidad de actualizar toda la aplicación en el navegador web.
     
-    \item \textbf{Vuetify}\footnote{\url{https://vuetifyjs.com/en/}}.  Es un framework progresivo orientado a componentes visuales, se basa en el concepto \textit{Material Design}\footnote{\url{https://material.io/design/}}, con elementos reconocibles por los usuarios en la mayoría de las apps. Se utiliza para lograr una experiencia de usuario satisfactoria, en base al diseño establecido en la sección \ref{dis-des-colabo}.\vskip
+    \item \textbf{\Gls{Vuetify}}\footnote{\url{https://vuetifyjs.com/en/}}.  Es un framework progresivo orientado a componentes visuales, se basa en el concepto \textit{\Gls{Material Design}}\footnote{\url{https://material.io/design/}}, con elementos reconocibles por los usuarios en la mayoría de las apps. Se utiliza para lograr una experiencia de usuario satisfactoria, en base al diseño establecido en la sección \ref{dis-des-colabo}.\vskip
     
    
 
@@ -360,12 +453,13 @@ Para una mejor comprensión de la UI, se hace una  distinción entre pantallas y
 
 
 \subsubsection{Pantalla de Proyectos}
-Luego del \textit{login} mediante un usuario y contraseña, se muestra una pantalla con el listado de proyectos (ver figura \ref{fig:cocada1})(izquierda).
+Luego del \textit{\gls{login}} mediante un usuario y contraseña, se muestra una pantalla con el listado de proyectos (ver figura \ref{fig:cocada1})(izquierda) con la posibilidad de ver, editar y eliminar los mismos. Al hacer click en la llamada a la acción (botón) en la parte superior derecha de la ventana se agrega un nuevo proyecto. A la derecha se puede observar el formulario de alta para un nuevo proyecto. Los usuarios Persona A y Persona B pueden agregar proyectos.
 
 \begin{figure}[h]
     \includegraphics[width=16cm]{Img/Desarrollo/cocada0.jpg}
     \centering
-    \caption{\footnotesize{Pantalla de proyectos (izquierda), en primera instancia se muestra un listado de proyectos con la posibilidad de ver, editar y eliminar los mismos. Al hacer click en la llamada a la acción (botón) en la parte superior derecha de la ventana se agrega un nuevo proyecto. A la derecha se puede observar el formulario de alta para un nuevo proyecto. Los usuarios Persona A y Persona B pueden agregar proyectos.}}
+    \caption{\footnotesize{Pantalla de Proyectos en CoCADa% (izquierda), en primera instancia se muestra un listado de proyectos con la posibilidad de ver, editar y eliminar los mismos. Al hacer click en la llamada a la acción (botón) en la parte superior derecha de la ventana se agrega un nuevo proyecto. A la derecha se puede observar el formulario de alta para un nuevo proyecto. Los usuarios Persona A y Persona B pueden agregar proyectos.
+    }}
      \label{fig:cocada1}
 \end{figure}
 
@@ -376,7 +470,7 @@ Al agregar un nuevo producto o al ``ver'' un proyecto del listado, se muestra la
 \begin{figure}[ht]
     \includegraphics[width=16cm]{Img/Desarrollo/cocada-pantalla.png}
     \centering
-    \caption{\footnotesize{Pantalla de Producto. Visor 3D (A) (izquierda). Editor de código (B) (centro). Componente para compartir el modelo (C) (derecha y arriba). Componente de comentarios e historial de modelos (D) (derecha y abajo).}}
+    \caption{\footnotesize{Pantalla de Producto en CoCADa.}}
      \label{fig:cocada2}
 \end{figure}
 
@@ -387,16 +481,16 @@ Los componentes web de la pantalla son:
 
 \begin{itemize}
 \textbf{A1. Modelo 3D}. Se visualiza el modelo mediante OpenJSCAD y WebGL. Funcionalidades:\\
-        \item \textbf{- Zoom} (in - out) mediante el scroll con botón del medio del mouse.\\
+        \item \textbf{- Zoom} (+  / -) mediante el scroll con botón del medio del mouse.\\
         \item \textbf{- Rotación} mediante click con botón izquierdo y moviendo el mouse.\\
         \item \textbf{- Traslación} mediante la tecla shift + botón izquierdo presionados y moviendo el mouse.\\
-         \item \textbf{- Reiniciar Vista} mediante el botón ubicado abajo y a la derecha en el visor (sitúa la cámara en su posición original).\\
+         \item \textbf{- Reiniciar Vista} mediante el botón ubicado abajo y a la derecha en el visor (establece la cámara en su posición original).\\
         \item \textbf{- Descargar STL}. Se genera y descarga el modelo sólido en formato STL (preparado para la fabricación digital)(ver figura \ref{fig:impresion3d}).
         
 \end{itemize}
 
 \begin{figure}[ht]
-    \includegraphics[width=8cm]{Img/Desarrollo/impresion3d.jpg}
+    \includegraphics[width=5cm]{Img/Desarrollo/impresion3dc.jpg}
     \centering
     \caption{\footnotesize{Ejemplo de fabricación digital con impresora 3D.}}
      \label{fig:impresion3d}
@@ -405,9 +499,9 @@ Los componentes web de la pantalla son:
 \begin{itemize}
 \textbf{A2. Parámetros}. Se sitúa en la parte inferior izquierda. Tiene los siguientes componentes:\\
         \item \textbf{- Parámetros de control}.
-        Estos campos se configuran previamente mediante código en el componente B (la flecha en la figura \ref{fig:cocada2} indica la relación con el código que genera el campo).\\
+        Estos campos se configuran previamente mediante código en el componente B (la flecha en la figura \ref{fig:cocada2} indica la relación del campo con el código que lo genera).\\
         \item \textbf{- Modo Automático}. Permite visualizar automáticamente los cambios, ya sea modificando los parámetros o editando el código. En caso de deshabilitar la opción, los cambios son manuales mediante el botón de la izquierda (útil para modelos con gran cantidad de polígonos). \\
-        \item \textbf{- Reiniciar parámetros}. Permite volver los campos de los parámetros al valor por defecto especificado en el código.\\
+        \item \textbf{- Reiniciar parámetros}. Permite establecer los parámetros al valor por defecto especificado en el código.
         
 \end{itemize}
 
@@ -416,19 +510,18 @@ Los componentes web de la pantalla son:
 
 
 \begin{itemize}
-\item \textbf{B. Componente Editor de código}.
+\item \textbf{B. Componente Editor de código} (centro).
 
 \begin{itemize}
-Se sitúa en la parte central del layout y es visible únicamente por el usuario Persona B (diseñador, establecido en la sección \ref{personas}).\\
-CoCADa permite editar código javascript en la web con capacidad de resaltado de sintaxis mediante el editor \textbf{Ace Editor}\footnote{\url{https://ace.c9.io/}}. \\Si la opción de ``actualizar automáticamente'' se encuentra habilitada, el código se ejecuta de forma automática. De lo contrario es necesario ejecutar el programa mediante las teclas shift + enter.\\ 
-Un script OpenJSCAD debe tener al menos una función definida, la funcion \textit{main()}, que retorna un objeto CSG o un vector (array) de dos o más objetos CSG. 
-A continuación se analiza un programa que genera un objeto 3D mediante una operación booleana y transformaciones geométricas. En el código se puede apreciar el uso de una función ordinaria de javascript para calcular un radio, transformaciones sobre los cilindros (rotación), una operación booleana (diferencia) entre una esfera y los tres cilindros; y la definición de parámetros para el usuario. El resultado del script se puede ver  en la figura \ref{fig:jopen}.\\
+Se sitúa en la parte central de la pantalla (ver figura \ref{fig:cocada2}) y solo es visible por el usuario Persona B (profesional) establecido en \ref{personas}).\\
+CoCADa permite la edición de código con  resaltado de sintaxis mediante el editor \textbf{\Gls{Ace Editor}}\footnote{\url{https://ace.c9.io/}}. \\Si la opción de ``actualizar automáticamente'' se encuentra habilitada, el código se ejecuta de forma automática. De lo contrario es necesario ejecutar el programa mediante la combinación de teclas Shift + Enter.\\ 
+Un script OpenJSCAD debe tener al menos una función definida, la funcion \textit{main()}, que retorna un objeto CSG o un vector (array) de dos o más objetos CSG. De esa manera se pueden definir otros objetos o primitivas para aumentar la potencia del modelador.\\ 
+El siguiente programa genera un objeto 3D mediante una operación booleana y transformaciones geométricas. Se puede apreciar el uso de una función ordinaria de JavaScript para calcular un radio, transformaciones sobre los cilindros (rotación), una operación booleana (diferencia) entre una esfera y tres cilindros; y la definición de parámetros para el usuario. 
 
-\end{itemize}
-
+\begin{code}
 \begin{minted}[baselinestretch=1, bgcolor=white, linenos, fontsize=\footnotesize]{js}
 
-function radiusFromDiameter (d) {// Función de javascript
+function radiusFromDiameter (d) {// Función ordinaria de JavaScript
   return d / 2;
 }
 
@@ -460,21 +553,30 @@ function getParameterDefinitions () { // Parámetros
     { name: 'hole', caption: 'Tamaño Huecos:',
     type: 'slider', initial: 10, min: 5, max: 50, step: 1 } ];
 }
-
 \end{minted}
+
+\end{code}
+
+
+El resultado del script se puede analizar  en la figura \ref{fig:jopen}.
 
 \begin{figure}[h]
 \includegraphics[width=7cm]{Img/Desarrollo/esfera-cocada.png}
 \centering
-\caption{\footnotesize{Modelo 3D resultante de la operación booleana (diferencia) entre una esfera y tres cilindros transformados. En la parte inferior se pueden apreciar los parámetros definidos en el código.}}
+\caption{\footnotesize{Resultado de un script utilizando CoCADa.}}
 \label{fig:jopen}
 \end{figure}
 
 
+
 Todas las funcionalidades de OpenJSCAD y ejemplos de código se puede estudiar en la guía oficial\footnote{\url{https://openjscad.org/dokuwiki/doku.php}}.
 
+\end{itemize}
 
-\item \textbf{- Nueva Versión}. Genera una nueva versión del espacio de trabajo (Producto) y luego está disponible en el historial de versiones en el componente (D). El código versionado toma como base los parámetros modificados. 
+\item  
+\begin{itemize}
+\textbf{- Nueva Versión}. Genera una nueva versión del espacio de trabajo (Producto) tomando como base los parámetros modificados. Las versiones se guardan en el historial de versiones en el componente (D).
+\end{itemize}
 
 
 
@@ -482,9 +584,9 @@ Todas las funcionalidades de OpenJSCAD y ejemplos de código se puede estudiar e
 
 
 \begin{itemize}
-\item \textbf{C. Componente Compartir modelo}.
+\item \textbf{C. Componente Compartir modelo} (derecha).
 \begin{itemize}
- Se sitúa en la parte superior derecha de la pantalla. Se comparte un enlace web a una pantalla con visor reducido con el modelo. El objetivo es poder mostrar un diseño a usuarios anónimos.
+ Se sitúa en la parte superior derecha de la pantalla. Se comparte un enlace web con un espacio de trabajo reducido (visor 3D y el modelo). El objetivo es compartir un diseño con usuarios anónimos.
 \end{itemize}
 
 \end{itemize}
@@ -492,38 +594,43 @@ Todas las funcionalidades de OpenJSCAD y ejemplos de código se puede estudiar e
 
 
 \begin{itemize}
-\item \textbf{D. Componente de Comentarios e Historial de modelos}.
+\item \textbf{D. Componente de Comentarios e Historial de modelos} (derecha).
 
-\begin{figure}[ht]
+
+
+\begin{itemize}
+ Se sitúa en la parte inferior  derecha de la pantalla. Utiliza un mecanismo de pestañas en inglés \textit{tabs} de manera que la selección de una opción oculte la otra, las opciones son ``Comentarios'' e ``Historial''.\\
+ 
+ 
+
+ \textbf{- Componente de comentarios}. 
+ Se accede a través de la primer pestaña o icono en forma de comentario. Se puede apreciar el formulario para carga de comentarios en un producto, su objetivo es lograr la comunicación entre los usuarios en forma de conversación o \textit{chat} (ver \ref{fig:comment0})(izquierda).
+ 
+ \begin{figure}[h]
     \includegraphics[width=14cm]{Img/Desarrollo/comentario00.png}
     \centering
-    \caption{\footnotesize{CoCADa. Pestaña de Comentarios: formulario para carga de comentarios en un producto (izquierda). Pestaña de Historial: Listado de productos o versiones (derecha).}}
+    \caption{\footnotesize{Componente de Comentarios y Componente de Historial.}}
     \label{fig:comment0}
 \end{figure}
 
-\begin{itemize}
- Se sitúa en la parte inferior  derecha del layout. Utiliza un mecanismo de pestañas en inglés \textit{tabs} de manera que la selección de una opción oculte la otra, las opciones son ``Comentarios'' e ``Historial''.\\
- 
 
-
- \textbf{- Componente de comentarios}. 
- Se accede a través de la primer pestaña o icono en forma de comentario. Su objetivo es lograr la comunicación entre los usuarios en forma de conversación o \textit{chat} (ver \ref{fig:comment0} (izquierda)).
  Existen dos maneras de utilizar imágenes en los comentarios:\\
  
 
 \textbf{Como imagen adjunta}. \\
-Presionando el icono de la esquina inferior izquierda del componente (ver figura \ref{fig:comment0} (izquierda)) es posible explorar archivos del dispositivo y adjuntar una imagen. 
+Presionando el icono de la esquina inferior izquierda del componente (ver figura \ref{fig:comment0})(izquierda) es posible explorar archivos del dispositivo y adjuntar una imagen. 
+\\
+\textbf{Como anotaciones en el modelo}. \\
+Se utiliza la herramienta presionando el icono con forma de lápiz (ver figura \ref{fig:comment0})(izquierda). Esto realiza una captura de pantalla del modelo y mediante una herramienta de dibujado permite hacer anotaciones sobre la imagen. Las anotaciones son muy útiles para comunicar de manera directa ideas sobre el modelo y lograr la colaboración entre participantes con diferentes competencias.
 
-\textbf{Como anotaciones en el modelo}. 
 \begin{figure}[h]
-    \includegraphics[width=12cm]{Img/Desarrollo/comentario2.jpg}
+    \includegraphics[width=10cm]{Img/Desarrollo/comentario2.jpg}
     \centering
-    \caption{\footnotesize{ Herramienta para anotaciones sobre los modelos. Se utiliza la herramienta presionando el icono con forma de lápiz. Esto realiza una captura de pantalla del modelo y mediante una herramienta de dibujado permite hacer anotaciones sobre la imagen. Las anotaciones son muy útiles para comunicar de manera directa ideas sobre el modelo y lograr la colaboración entre participantes con diferentes competencias. }}
+    \caption{\footnotesize{ Herramienta para anotaciones sobre los modelos. }}
     \label{fig:comment2}
 \end{figure}
 
 \\
-
 
 
 
@@ -539,7 +646,7 @@ Se accede a través de la segunda pestaña o icono en forma de reloj. Permite vi
 \end{itemize}
 
 
-\clearpage
+%\clearpage
 \subsection{Interacción entre Usuarios, Front-End y Back-End}
 
 Mediante el gráfico resumido de la  arquitectura (ver figura \ref{fig:front-backend}) se pueden analizar las interacciones de los usuarios y las áreas del sistema:
@@ -547,7 +654,7 @@ Mediante el gráfico resumido de la  arquitectura (ver figura \ref{fig:front-bac
 \begin{figure}[ht]
     \includegraphics[width=12cm]{Img/Desarrollo/front-back.png}
     \centering
-    \caption{\footnotesize{ CoCADa interacción entre usuarios, Front-End y Back-End. }}
+    \caption{\footnotesize{ Interacción entre usuarios, Front-End y Back-End. }}
     \label{fig:front-backend}
 \end{figure}
 
@@ -555,7 +662,7 @@ Mediante el gráfico resumido de la  arquitectura (ver figura \ref{fig:front-bac
 \begin{enumerate}
     \item El usuario ingresa al sistema utilizando el navegador web (\textit{Fron-End}) mediante una URL, por ejemplo:  \url{http://cocada:3000/proyecto/000001}.
     
-    \item Nuxt.js resuelve la petición en el servidor (\textit{Back-End}) según la URL ingresada por el usuario, 
+    \item Nuxt.js resuelve la petición en el servidor (\textit{Back-End}) según la \Gls{URL} ingresada por el usuario, 
     en caso de requerir recursos de la API se comunica con LoopBack. Finalmente, se genera la aplicación (CoCADa APP) con los datos solicitados y se envía al \textit{Front-End}. A partir de este momento Nuxt.js no vuelve a intervenir.  
 
    \item El usuario a través de CoCADa APP realiza una acción, por ejemplo: \textit{Login}, listar proyectos, ver un proyecto, generar una nueva versión, etc. El \textit{Front-End} genera la petición API correspondiente mediante Vue.js. %Tanto las acciones como las interacciones en la UI son gestionadas por Vue.js.
